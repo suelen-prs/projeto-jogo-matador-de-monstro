@@ -4,14 +4,12 @@ new Vue({
         running: false,
         playerLife: 100,
         monsterLife: 100,
-        logs: [],
-        
+        logs: []
     },
     computed: {
         hasResult() {
             return this.playerLife == 0 || this.monsterLife == 0
         }
-
     },
     methods: {
         startGame() {
@@ -22,11 +20,11 @@ new Vue({
         },
         attack(especial) {
             this.hurt('monsterLife', 5, 10, especial, 'Jogador', 'Monstro', 'player')
-            if(this.monsterLife > 0){
+            if(this.monsterLife > 0) {
                 this.hurt('playerLife', 7, 12, false, 'Monstro', 'Jogador', 'monster')
-            }   
+            }
         },
-        hurt(prop, min, max, especial, source, target, cls){
+        hurt(prop, min, max, especial, source, target, cls) {
             const plus = especial ? 5 : 0
             const hurt = this.getRandom(min + plus, max + plus)
             this[prop] = Math.max(this[prop] - hurt, 0)
@@ -48,8 +46,6 @@ new Vue({
         registerLog(text, cls) {
             this.logs.unshift({ text, cls })
         }
-
-
     },
     watch: {
         hasResult(value) {

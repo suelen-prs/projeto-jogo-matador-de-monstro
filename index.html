@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Matador de Monstro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -17,7 +16,7 @@
                         :class="{danger: playerLife < 20}"
                         :style="{width: playerLife + '%'}"></div>
                 </div>
-                <div>{{ playerLife }}%</div> 
+                <div>{{ playerLife }}%</div>
             </div>
             <div class="score">
                 <h1>Monstro</h1>
@@ -51,13 +50,11 @@
             class="panel logs">
             <ul>
                 <li v-for="log in logs"
-                    :class="logs.cls"
+                    :class="log.cls"
                     class="log">{{ log.text }}</li>
             </ul>
         </div>
-
     </div>
     <script src="app.js"></script>
-    
 </body>
 </html>
